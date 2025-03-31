@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>M3UPlugin</name>
+    </assembly>
+    <members>
+        <member name="T:Jellyfin.Plugin.Template.Configuration.SomeOptions">
+            <summary>
+            The configuration options.
+            </summary>
+        </member>
+        <member name="F:Jellyfin.Plugin.Template.Configuration.SomeOptions.OneOption">
+            <summary>
+            Option one.
+            </summary>
+        </member>
+        <member name="F:Jellyfin.Plugin.Template.Configuration.SomeOptions.AnotherOption">
+            <summary>
+            Second option.
+            </summary>
+        </member>
+        <member name="T:Jellyfin.Plugin.Template.Configuration.PluginConfiguration">
+            <summary>
+            Plugin configuration.
+            </summary>
+        </member>
+        <member name="M:Jellyfin.Plugin.Template.Configuration.PluginConfiguration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Jellyfin.Plugin.Template.Configuration.PluginConfiguration"/> class.
+            </summary>
+        </member>
+        <member name="P:Jellyfin.Plugin.Template.Configuration.PluginConfiguration.TrueFalseSetting">
+            <summary>
+            Gets or sets a value indicating whether some true or false setting is enabled..
+            </summary>
+        </member>
+        <member name="P:Jellyfin.Plugin.Template.Configuration.PluginConfiguration.AnInteger">
+            <summary>
+            Gets or sets an integer setting.
+            </summary>
+        </member>
+        <member name="P:Jellyfin.Plugin.Template.Configuration.PluginConfiguration.AString">
+            <summary>
+            Gets or sets a string setting.
+            </summary>
+        </member>
+        <member name="P:Jellyfin.Plugin.Template.Configuration.PluginConfiguration.Options">
+            <summary>
+            Gets or sets an enum option.
+            </summary>
+        </member>
+        <member name="T:M3UPlugin.M3UEntry">
+            <summary>
+            Represents a single entry in an M3U file.
+            </summary>
+        </member>
+        <member name="P:M3UPlugin.M3UEntry.Title">
+            <summary>
+            Gets or sets the title of the entry.
+            </summary>
+        </member>
+        <member name="P:M3UPlugin.M3UEntry.Url">
+            <summary>
+            Gets or sets the URL of the entry.
+            </summary>
+        </member>
+        <member name="T:M3UPlugin.M3UPlugin">
+            <summary>
+            Klasa główna pluginu.
+            </summary>
+        </member>
+        <member name="M:M3UPlugin.M3UPlugin.#ctor(MediaBrowser.Common.Configuration.IApplicationPaths,MediaBrowser.Model.Serialization.IXmlSerializer,MediaBrowser.Controller.Library.ILibraryManager,Microsoft.Extensions.Logging.ILoggerFactory,MediaBrowser.Controller.Providers.IRemoteMetadataProvider{MediaBrowser.Controller.Entities.Movies.Movie,MediaBrowser.Controller.Providers.MovieInfo})">
+            <summary>
+            Initializes a new instance of the <see cref="T:M3UPlugin.M3UPlugin"/> class.
+            </summary>
+            <param name="applicationPaths">Application paths.</param>
+            <param name="xmlSerializer">XML serializer instance.</param>
+            <param name="libraryManager">Library manager.</param>
+            <param name="loggerFactory">Logger factory instance.</param>
+            <param name="metadataProvider">Remote metadata provider for movies.</param>
+        </member>
+        <member name="P:M3UPlugin.M3UPlugin.Name">
+            <summary>
+            Gets the name of the plugin.
+            </summary>
+        </member>
+        <member name="P:M3UPlugin.M3UPlugin.Description">
+            <summary>
+            Gets the description of the plugin.
+            </summary>
+        </member>
+        <member name="P:M3UPlugin.M3UPlugin.Id">
+            <summary>
+            Gets the unique identifier of the plugin.
+            </summary>
+        </member>
+        <member name="M:M3UPlugin.M3UPlugin.GetDefaultConfiguration">
+            <summary>
+            Returns the default configuration for the plugin.
+            </summary>
+            <returns>The default PluginConfiguration.</returns>
+        </member>
+        <member name="M:M3UPlugin.M3UPlugin.GetConfigurationInstance">
+            <summary>
+            Returns the current configuration instance for the plugin.
+            </summary>
+            <returns>The PluginConfiguration instance.</returns>
+        </member>
+        <member name="M:M3UPlugin.M3UPlugin.LoadM3UPlaylist">
+            <summary>
+            Loads the M3U playlist, parses its entries, and adds movies to the library.
+            </summary>
+            <returns>A task that represents the asynchronous operation.</returns>
+        </member>
+        <member name="M:M3UPlugin.M3UPlugin.AddMovieToLibrary(System.String,System.String)">
+            <summary>
+            Adds a movie to the library based on the given title and URL.
+            </summary>
+            <param name="title">The title of the movie.</param>
+            <param name="url">The URL of the movie.</param>
+        </member>
+        <member name="T:M3UPlugin.M3UProcessor">
+            <summary>
+            Helper class for processing M3U files.
+            </summary>
+        </member>
+        <member name="M:M3UPlugin.M3UProcessor.ParseM3U(System.String)">
+            <summary>
+            Parses the M3U file and returns a collection of entries.
+            </summary>
+            <param name="filePath">The path to the M3U file.</param>
+            <returns>A collection of M3UEntry instances.</returns>
+        </member>
+        <member name="T:M3UPlugin.PluginConfiguration">
+            <summary>
+            Plugin configuration.
+            </summary>
+        </member>
+        <member name="P:M3UPlugin.PluginConfiguration.M3UFilePath">
+            <summary>
+            Gets or sets the file path to the M3U file.
+            </summary>
+        </member>
+    </members>
+</doc>

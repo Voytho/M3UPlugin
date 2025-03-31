@@ -1,0 +1,21 @@
+[
+    {
+        "guid": "5587068e-4e6b-46d1-98ca-dd11b99faf09",
+        "name": "M3U Plugin",
+        "description": "Plugin for adding M3U playlist support to Jellyfin.",
+        "overview": "Allows importing and managing M3U playlists within Jellyfin.",
+        "owner": "Voytho",
+        "category": "Playback",
+        "imageUrl": "https://raw.githubusercontent.com/Voytho/Jellyfin-M3UPlugin/main/resources/logo.png",
+        "versions": [
+            {
+                "version": "1.0.0.0",
+                "changelog": "Initial release of M3U Plugin.",
+                "targetAbi": "10.8.0.0",
+                "sourceUrl": "https://github.com/Voytho/Jellyfin-M3UPlugin/releases/download/v1.0.0.0/M3UPlugin-1.0.0.0.zip",
+                "checksum": "705E6B4D4485F0B0515FEBF1C14B945CE6A61BF010D9429FBEBF92293349BBDF",
+                "timestamp": "2025-03-31T12:00:00Z"
+            }
+        ]
+    }
+]

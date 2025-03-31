@@ -1,0 +1,14 @@
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.csproj.AssemblyReference.cache
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.AssemblyInfoInputs.cache
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.AssemblyInfo.cs
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.csproj.CoreCompileInputs.cache
+C:\Users\wojtek\Desktop\M3UPlugin\src\bin\Release\net8.0\M3UPlugin.deps.json
+C:\Users\wojtek\Desktop\M3UPlugin\src\bin\Release\net8.0\M3UPlugin.dll
+C:\Users\wojtek\Desktop\M3UPlugin\src\bin\Release\net8.0\M3UPlugin.pdb
+C:\Users\wojtek\Desktop\M3UPlugin\src\bin\Release\net8.0\M3UPlugin.xml
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.dll
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\refint\M3UPlugin.dll
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.xml
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.pdb
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\ref\M3UPlugin.dll
