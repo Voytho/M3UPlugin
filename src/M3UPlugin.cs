@@ -1,9 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Jellyfin.Plugin.Template.Configuration;
 using MediaBrowser.Common.Configuration;
@@ -11,11 +8,9 @@ using MediaBrowser.Common.Plugins;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Entities.Movies;
 using MediaBrowser.Controller.Library;
-using MediaBrowser.Controller.Providers;
 using MediaBrowser.Model.Configuration;
 using MediaBrowser.Model.Drawing;
 using MediaBrowser.Model.Plugins;
-using MediaBrowser.Model.Providers;
 using MediaBrowser.Model.Serialization;
 using Microsoft.Extensions.Logging;
 
@@ -30,24 +25,21 @@ namespace M3UPlugin
         private readonly IXmlSerializer _xmlSerializer;
         private readonly ILibraryManager _libraryManager;
         private readonly ILogger<M3UPlugin> _logger;
-        private readonly IRemoteMetadataProvider<Movie, MovieInfo> _metadataProvider;
         private readonly PluginConfiguration _configuration;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="M3UPlugin"/> class.
         /// </summary>
-        /// <param name="applicationPaths">Application paths.</param>
-        /// <param name="xmlSerializer">XML serializer instance.</param>
-        /// <param name="libraryManager">Library manager.</param>
-        /// <param name="loggerFactory">Logger factory instance.</param>
-        /// <param name="metadataProvider">Remote metadata provider for movies.</param>
-        public M3UPlugin(IApplicationPaths applicationPaths, IXmlSerializer xmlSerializer, ILibraryManager libraryManager, ILoggerFactory loggerFactory, IRemoteMetadataProvider<Movie, MovieInfo> metadataProvider)
+        /// <param name="applicationPaths">Ścieżki aplikacji.</param>
+        /// <param name="xmlSerializer">Instancja serializatora XML.</param>
+        /// <param name="libraryManager">Zarządzanie biblioteką.</param>
+        /// <param name="loggerFactory">Instancja fabryki loggerów.</param>
+        public M3UPlugin(IApplicationPaths applicationPaths, IXmlSerializer xmlSerializer, ILibraryManager libraryManager, ILoggerFactory loggerFactory)
         {
             _applicationPaths = applicationPaths;
             _xmlSerializer = xmlSerializer;
             _libraryManager = libraryManager;
             _logger = loggerFactory.CreateLogger<M3UPlugin>();
-            _metadataProvider = metadataProvider;
             _configuration = new PluginConfiguration();
         }
 
@@ -59,7 +51,7 @@ namespace M3UPlugin
         /// <summary>
         /// Gets the description of the plugin.
         /// </summary>
-        public override string Description => "Plugin loads an m3u list with movie links, searches for their metadata and covers, and then adds them to the movie directory.";
+        public override string Description => "Plugin loads an m3u list with movie links and adds them to the movie directory.";
 
         /// <summary>
         /// Gets the unique identifier of the plugin.
@@ -95,7 +87,7 @@ namespace M3UPlugin
 
             foreach (var entry in entries)
             {
-                await AddMovieToLibrary(entry.Title, entry.Url).ConfigureAwait(true);
+                await AddMovieToLibrary(entry.Title, entry.Url).ConfigureAwait(false);
             }
         }
 
@@ -104,7 +96,7 @@ namespace M3UPlugin
         /// </summary>
         /// <param name="title">The title of the movie.</param>
         /// <param name="url">The URL of the movie.</param>
-        private async Task AddMovieToLibrary(string title, string url)
+        private Task AddMovieToLibrary(string title, string url)
         {
             var movie = new Movie
             {
@@ -113,18 +105,10 @@ namespace M3UPlugin
                 IsVirtualItem = true
             };
 
-            var metadataResult = await _metadataProvider.GetMetadata(new MovieInfo { Name = title }, default).ConfigureAwait(true);
-            if (metadataResult != null && metadataResult.Item != null)
-            {
-                var metadata = metadataResult.Item;
-                movie.Overview = metadata.Overview;
-                movie.PremiereDate = metadata.PremiereDate;
-                movie.ProductionYear = metadata.ProductionYear;
-                movie.ImageInfos = metadata.ImageInfos;
-            }
-
             _libraryManager.CreateItem(movie, _libraryManager.GetUserRootFolder());
             _logger.LogInformation("Dodano film: {MovieName}", movie.Name);
+
+            return Task.CompletedTask;
         }
     }
 }

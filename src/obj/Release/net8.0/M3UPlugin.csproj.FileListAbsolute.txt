@@ -12,3 +12,4 @@ C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\refint\M3UPlugin.dll
 C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.xml
 C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.pdb
 C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\ref\M3UPlugin.dll
+C:\Users\wojtek\Desktop\M3UPlugin\src\obj\Release\net8.0\M3UPlugin.sourcelink.json

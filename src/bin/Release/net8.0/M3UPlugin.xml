@@ -69,15 +69,14 @@
             Klasa główna pluginu.
             </summary>
         </member>
-        <member name="M:M3UPlugin.M3UPlugin.#ctor(MediaBrowser.Common.Configuration.IApplicationPaths,MediaBrowser.Model.Serialization.IXmlSerializer,MediaBrowser.Controller.Library.ILibraryManager,Microsoft.Extensions.Logging.ILoggerFactory,MediaBrowser.Controller.Providers.IRemoteMetadataProvider{MediaBrowser.Controller.Entities.Movies.Movie,MediaBrowser.Controller.Providers.MovieInfo})">
+        <member name="M:M3UPlugin.M3UPlugin.#ctor(MediaBrowser.Common.Configuration.IApplicationPaths,MediaBrowser.Model.Serialization.IXmlSerializer,MediaBrowser.Controller.Library.ILibraryManager,Microsoft.Extensions.Logging.ILoggerFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:M3UPlugin.M3UPlugin"/> class.
             </summary>
-            <param name="applicationPaths">Application paths.</param>
-            <param name="xmlSerializer">XML serializer instance.</param>
-            <param name="libraryManager">Library manager.</param>
-            <param name="loggerFactory">Logger factory instance.</param>
-            <param name="metadataProvider">Remote metadata provider for movies.</param>
+            <param name="applicationPaths">Ścieżki aplikacji.</param>
+            <param name="xmlSerializer">Instancja serializatora XML.</param>
+            <param name="libraryManager">Zarządzanie biblioteką.</param>
+            <param name="loggerFactory">Instancja fabryki loggerów.</param>
         </member>
         <member name="P:M3UPlugin.M3UPlugin.Name">
             <summary>

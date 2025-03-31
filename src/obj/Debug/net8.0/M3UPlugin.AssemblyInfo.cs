@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("M3UPlugin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("0.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("0.0.0.0+298227dc315e7965c8bdb759b53970a199ffc3e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("M3UPlugin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("M3UPlugin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("0.0.0.0")]
