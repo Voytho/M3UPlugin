@@ -6,7 +6,7 @@
         "overview": "Allows importing and managing M3U playlists within Jellyfin.",
         "owner": "Voytho",
         "category": "Playback",
-        "imageUrl": "https://raw.githubusercontent.com/Voytho/Jellyfin-M3UPlugin/main/resources/logo.png",
+        "imageUrl": "https://raw.githubusercontent.com/Voytho/main/resources/logo.png",
         "versions": [
             {
                 "version": "1.0.0.0",
